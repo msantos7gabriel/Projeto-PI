@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'chat/styles.css' %}" />
     <title>Log uploader</title>
-    <link rel="icon" type="image/png" sizes="16x16"  href="imgs/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16"  href={% static 'chat/favicon-16x16.png' %}>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
   </head>
@@ -14,12 +14,12 @@
     <h1>Log analizer</h1>
     <form action="{% url 'index' %}" method="post" enctype="multipart/form-data" id="logform" name="logform">
       {% csrf_token %}
-      <!-- Se o campo file não estiver no form.as_p, adicione-o: -->
-      <input type="file" id="logforminput" name="arquivo" style="display: none;" />
+      
+      <input type="file" id="logforminput" name="arquivo" />
       <label for="logforminput" class="labellogform">+ Upload</label>
-      <!-- Outros campos do formulário -->
+      
       {{ form.as_p }}
-      <input type="submit" value="Upload Log" />
+      <input type="submit" value="Upload Log" id="submit"/>
     </form>
   </body>
 </html>
