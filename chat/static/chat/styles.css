@@ -9,4 +9,36 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #242424;
     color : #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+}
+
+#logforminput {
+    display: none;
+}
+
+.labellogform {
+    border: 1px solid rgb(25, 152, 190);
+    outline: 1px solid rgb(30, 167, 209);
+    box-shadow: 0 0 10px rgba(30, 167, 209, 0.8);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 100px 150px;
+    cursor: pointer;
+    background-color: #0f4b6910;
+    color: #249ed6;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.labellogform:hover {
+    background-color: #1a7daf25;
 }
