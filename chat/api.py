@@ -1,6 +1,7 @@
 from openai import OpenAI
 from loganaliser import settings
 import os
+import markdown
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
@@ -15,10 +16,10 @@ def call(nome):
 
     # Em vez de concatenar tudo em uma única string, separe em duas mensagens:
     mensagens = [
-        # {
-        #     "role": "user",
-        #     "content": conteudo  # Conteúdo do arquivo
-        # },
+        {
+            "role": "user",
+            "content": conteudo  # Conteúdo do arquivo
+        },
         {
             "role": "user",
             "content": (
@@ -29,7 +30,7 @@ def call(nome):
                 "Também quero que verifique os parâmetros de tensão e corrente para avaliar o desempenho da bateria, indicando se houve variações que possam sugerir problemas na alimentação. "
                 "Além disso, analise os dados dos sensores, como os valores do IMU, e comente sobre a resposta do sistema de controle e a confiabilidade dos registros de telemetria. "
                 "Por fim, gostaria que você indicasse com que nível de confiança (por exemplo, 95% de certeza) está avaliando os dados, fundamentando essa acurácia na documentação do ArduPilot e na qualidade dos dados disponíveis, e mencionasse quaisquer fatores que possam influenciar essa confiabilidade. "
-                "Se necessário, posso enviar logs adicionais para complementar a análise. Aguardo seu relatório detalhado, com eventuais anomalias identificadas e sugestões de melhorias. Segue o conteúdo do log: {conteudo}"
+                "Se necessário, posso enviar logs adicionais para complementar a análise. Aguardo seu relatório detalhado, com eventuais anomalias identificadas e sugestões de melhorias."
             )
         }
     ]
@@ -41,4 +42,7 @@ def call(nome):
         messages=mensagens
     )
     os.remove(caminho_arquivo)
-    return completion.choices[0].message.content
+    
+    html = markdown.markdown(completion.choices[0].message.content)
+    
+    return html

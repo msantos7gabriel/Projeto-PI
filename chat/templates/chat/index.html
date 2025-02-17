@@ -10,7 +10,7 @@
 <body>
   <header>
     <h1>Log Analiser | Chat</h1>
-    <p>{{ ai_response }}</p>
+    {{ ai_response|safe }}
     <a href="{% url 'index' %}">Reenviar outro log</a>
   </header>
 </body>
