@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+{% load static %}
+<head>
+    <title>LogAnaliser</title>
+    <link rel="stylesheet" href="{% static 'chat/styles.css' %}">
+</head>
+
+<body>
     <header>
-      <h1>Chat</h1>
-      <p>Chat with your friends</p>
-      <div class="chat">
-        <div class="chat__message">
-          <div class="chat__message__avatar">
-            <img src="https://via.placeholder.com/50" alt="Avatar" />
-          </div>
-          <div class="chat__message__content">
-            <p>{{ chat_response }}</p>
-          </div>
-        </div>
-      </div>
+        <h1>Log Analiser | Chat</h1>
     </header>
-  </body>
-</html>
+    <main>
+        {% comment %} <div id="chat-log">
+            {% for message in messages %}
+                <div class="message">
+                    <span class="timestamp">{{ message.timestamp }}</span>
+                    <span class="username">{{ message.username }}</span>
+                    <span class="content">{{ message.content }}</span>
+                </div>
+            {% endfor %}
+        </div> {% endcomment %}
+        <form id="chat-form" method="post">
+            {% csrf_token %}
+            <input type="text" id="chat-message-input" name="message" placeholder="Type your message here...">
+            <button type="submit">Send</button>
+        </form> 
+</body>
