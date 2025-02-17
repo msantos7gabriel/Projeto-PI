@@ -1,12 +1,11 @@
 import os
+import asyncio
 from django.conf import settings
 from django.shortcuts import render
-from django.http import HttpResponse
 from .form import EnvioArquivo
 from .api import call
 
-
-def index(request):
+async def index(request):
     if request.method == 'POST':
         form = EnvioArquivo(request.POST, request.FILES)
         if form.is_valid():
@@ -18,12 +17,11 @@ def index(request):
                 for chunk in arquivo.chunks():
                     f.write(chunk)
 
-            # Chamada do chat
-            ai_response = call(nome=arquivo.name)
+            # Chamada assíncrona do chat
+            ai_response = await asyncio.to_thread(call, arquivo.name)
             print('Resposta de Ia retornada')
             return render(request, "chat/index.html", context={'ai_response': ai_response})
         else:
-            # Caso o formulário não seja válido, reexibe o formulário com erros
             return render(request, "chat/form.html", {'form': form})
     else:
         form = EnvioArquivo()
