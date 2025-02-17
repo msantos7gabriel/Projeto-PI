@@ -1,6 +1,5 @@
-from django.forms import forms
+from django import forms
 
 
 class EnvioArquivo(forms.Form):
     arquivo = forms.FileField()
-    

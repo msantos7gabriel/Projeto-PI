@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 from .form import EnvioArquivo
@@ -5,19 +7,20 @@ from .api import call
 
 
 def index(request):
-    if request.method != 'POST':
+    if request.method == 'POST':
         form = EnvioArquivo(request.POST, request.FILES)
         if form.is_valid():
             arquivo = request.FILES['arquivo']
-            with open(f'seu/diretorio/{arquivo.name}', 'wb+') as destino:
+            destino = os.path.join(settings.MEDIA_ROOT, arquivo.name)
+            print("Salvando em:", destino)
+            os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
+            with open(destino, 'wb+') as f:
                 for chunk in arquivo.chunks():
-                    destino.write(chunk)
-            return render(request, "chat/form.html")
+                    f.write(chunk)
+            return render(request, "chat/index.html")
+        else:
+            # Caso o formulário não seja válido, reexibe o formulário com erros
+            return render(request, "chat/form.html", {'form': form})
     else:
         form = EnvioArquivo()
-        render(request, "chat/form.html")
-
-    return render(request, "chat/index.html")
-    # chat_response = call('oi')
-    # context = {'chat_response': chat_response}
-    return render(request, "chat/index.html")
+    return render(request, "chat/form.html", {'form': form})
