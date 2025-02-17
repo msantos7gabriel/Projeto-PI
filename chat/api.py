@@ -40,6 +40,5 @@ def call(nome):
         model="deepseek/deepseek-chat:free",
         messages=mensagens
     )
-    print(completion.choices[0].message.content)
     os.remove(caminho_arquivo)
     return completion.choices[0].message.content
