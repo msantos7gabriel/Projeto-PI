@@ -17,7 +17,11 @@ def index(request):
             with open(destino, 'wb+') as f:
                 for chunk in arquivo.chunks():
                     f.write(chunk)
-            return render(request, "chat/index.html")
+
+            # Chamada do chat
+            ai_response = call(nome=arquivo.name)
+            print('Resposta de Ia retornada')
+            return render(request, "chat/index.html", context={'ai_response': ai_response})
         else:
             # Caso o formulário não seja válido, reexibe o formulário com erros
             return render(request, "chat/form.html", {'form': form})

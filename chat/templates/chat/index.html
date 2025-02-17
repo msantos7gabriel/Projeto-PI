@@ -7,21 +7,7 @@
 <body>
   <header>
     <h1>Log Analiser | Chat</h1>
+    <p>{{ ai_response }}</p>
+    <a href="{% url 'index' %}">Reenviar outro log</a>
   </header>
-  <main>
-    {% comment %} <div id="chat-log">
-      {% for message in messages %}
-        <div class="message">
-          <span class="timestamp">{{ message.timestamp }}</span>
-          <span class="username">{{ message.username }}</span>
-          <span class="content">{{ message.content }}</span>
-        </div>
-      {% endfor %}
-    </div> {% endcomment %}
-    <form id="chat-form" method="post">
-      {% csrf_token %}
-      <input type="text" id="chat-message-input" name="message" placeholder="Type your message here..." />
-      <button type="submit">Send</button>
-    </form>
-  </main>
 </body>
