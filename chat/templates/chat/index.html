@@ -11,7 +11,7 @@
   <!-- Cabeçalho-->
   <header>
     <div class="logo">
-      <img src="../../static/chat/logo.png" alt="Logo">
+      <img src="{% static 'chat/logo.png' %}" alt="Logo">
       <h1>LogAnalizer</h1>
     </div>
     <!-- Barra de navegação -->
@@ -20,13 +20,16 @@
       <a href="https://github.com/msantos7gabriel/Projeto-PI">Documentação</a>
     </nav>
   </header>
-
-  <section>
-    <div class="response">
-      {{ ai_response|safe }}
-    </div>
-    <a href="{% url 'index' %}">Reenviar outro log</a>
-  </section>
+  <div class="container">
+    <section>
+      <div class="box">
+        <div class="response files">
+          {{ ai_response|safe }}
+        </div>
+      </div>
+      <a id="submit" href="{% url 'index' %}">Reenviar outro log</a>
+    </section>
+  </div>  
 
   <!-- Rodapé -->
   <footer>
