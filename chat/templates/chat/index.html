@@ -11,15 +11,40 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
 
-  <body>
-    <header>
-      <h1>Log Analiser</h1>
-    </header>
-    <section>
-      <div class="response">
-        {{ ai_response|safe }}
+<body>
+  <!-- Cabeçalho-->
+  <header>
+    <div class="logo">
+      <img src="../../static/chat/logo.png" alt="Logo">
+      <h1>LogAnalizer</h1>
+    </div>
+    <!-- Barra de navegação -->
+    <nav>
+      <a href="">Home</a>
+      <a href="https://github.com/msantos7gabriel/Projeto-PI">Documentação</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="response">
+      {{ ai_response|safe }}
+    </div>
+    <a href="{% url 'index' %}">Reenviar outro log</a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="git">
+      <h2>Source code</h2>
+      <div class="gitparagraf">
+        <p>Disponível no </p><a href="https://github.com/msantos7gabriel/Projeto-PI">GitHub<i class="fa-brands fa-github"></i></a>
       </div>
-      <a href="{% url 'index' %}">Reenviar outro log</a>
-    </section>
-  </body>
-</html>
+    </div>
+    <div class="devs">
+      <h2>Devs</h2>
+      <a href="https://github.com/msantos7gabriel">Gabriel Montalvão</a>
+      <a href="https://github.com/bruno-rodrigues0">Bruno Rodrigues</a>
+      <a href="https://github.com/riancesaros">Rian Souza</a>
+    </div>
+   </footer>
+</body>
