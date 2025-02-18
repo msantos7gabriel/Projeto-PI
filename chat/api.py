@@ -35,7 +35,7 @@ def call(nome):
         # }
         {
             "role": "user",
-            "content": "Bom dia!, Me de algumas frases motivacionais em tópicos por favor.",
+            "content": "Bom dia!, Me de 3 frases motivacionais em tópicos por favor.",
         }
     ]
 
@@ -43,8 +43,7 @@ def call(nome):
         model="deepseek/deepseek-chat:free",
         messages=mensagens
     )
+    
     os.remove(caminho_arquivo)
-    
     html = markdown.markdown(completion.choices[0].message.content)
-    
     return html
