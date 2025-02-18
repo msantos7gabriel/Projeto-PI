@@ -200,3 +200,19 @@ h2 {
         text-decoration: underline;
     }
 }
+
+
+section a {
+    border: 1px solid rgb(25, 152, 190);
+    outline: 1px solid rgb(30, 167, 209);
+    border-radius: 8px;
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: rgb(25, 152, 190);
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: auto;
+    margin-top: 30px;
+}
