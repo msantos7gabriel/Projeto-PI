@@ -14,12 +14,25 @@
     <h1>Log analizer</h1>
     <form action="{% url 'index' %}" method="post" enctype="multipart/form-data" id="logform" name="logform">
       {% csrf_token %}
-      
       <input type="file" id="logforminput" name="arquivo" />
       <label for="logforminput" class="labellogform">+ Upload</label>
-      
-      {{ form.as_p }}
-      <input type="submit" value="Upload Log" id="submit"/>
+      <div class="files"></div>
+      <input type="submit" value="Analize" id="submit"/>
     </form>
+
+    <script>
+      document.getElementById('logforminput').addEventListener('change', function(event) {
+        var input = event.target;
+        var label = document.getElementById('labellogform');
+        if (input.files && input.files.length > 0) {
+          var child = document.createTextNode(input.files[0].name);
+          var files = document.querySelector('.files');
+          files.appendChild(child);
+        } else {
+          label.textContent = '+ Upload';
+        }
+      });
+    </script>
+    
   </body>
 </html>

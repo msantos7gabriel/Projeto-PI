@@ -30,8 +30,8 @@ h1 {
     outline: 1px solid rgb(30, 167, 209);
     box-shadow: 0 0 10px rgba(30, 167, 209, 0.8);
     border-radius: 8px;
-    display: inline-block;
-    padding: 100px 150px;
+    display: block;
+    padding: 30px 50px;
     cursor: pointer;
     background-color: #0f4b6910;
     color: #249ed6;
@@ -43,15 +43,66 @@ h1 {
     background-color: #1a7daf25;
 }
 
+.files {
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #249ed6;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px;
+}
+
 #submit {
     border: 1px solid rgb(25, 152, 190);
     outline: 1px solid rgb(30, 167, 209);
     border-radius: 8px;
-    display: inline-block;
+    display: block;
     padding: 10px 20px;
     cursor: pointer;
     background-color: rgb(25, 152, 190);
     color: white;
     font-size: 1rem;
     font-weight: bolder;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.response {
+    width: 80%;
+    margin: auto;
+}
+
+.response h2 {
+    font-size: 3rem;
+    margin-block: 20px;
+}
+
+.response h3 {
+    font-size: 2.5rem;
+    margin-block: 10px;
+}
+
+.response p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.response a {
+    color: #249ed6;
+    text-decoration: none;
+}
+
+.response a:hover {
+    text-decoration: underline;
+}
+
+.response {
+    background-color: #333;
+    border: 1px solid #249ed6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    word-wrap: break-word;
 }
