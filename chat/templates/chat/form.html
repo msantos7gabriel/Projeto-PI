@@ -6,19 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'chat/styles.css' %}" />
     <title>Log uploader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="16x16"  href={% static 'chat/favicon-16x16.png' %}>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <h1>Log analizer</h1>
-    <form action="{% url 'index' %}" method="post" enctype="multipart/form-data" id="logform" name="logform">
-      {% csrf_token %}
-      <input type="file" id="logforminput" name="arquivo" />
-      <label for="logforminput" class="labellogform">+ Upload</label>
-      <div class="files"></div>
-      <input type="submit" value="Analize" id="submit"/>
-    </form>
+    <!-- Cabeçalho-->
+    <header>
+      <div class="logo">
+        <h1>LogAnalizer</h1>
+      </div>
+      <!-- Barra de navegação -->
+      <nav>
+        <a href="">Home</a>
+        <a href="https://github.com/msantos7gabriel/Projeto-PI">Documentação</a>
+      </nav>
+    </header>
+    <!-- Formulario de envio do arquivo-->
+    <div class="box">
+      <form action="{% url 'index' %}" method="post" enctype="multipart/form-data" id="logform" name="logform">
+        {% csrf_token %}
+        <input type="file" id="logforminput" name="arquivo" />
+        <label for="logforminput" class="labellogform"><i class="fa-solid fa-upload"></i> Upload</label>
+        <div class="files"></div>
+        <input type="submit" value="Analizar" id="submit"/>
+      </form>
+    </div>
+
+    <!-- Rodapé -->
+     <footer>
+      <div class="git">
+        <h2>Source code</h2>
+        <div class="gitparagraf">
+          <p>Disponivel no </p><a href="https://github.com/msantos7gabriel/Projeto-PI">GitHub<i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="devs">
+        <h2>Devs</h2>
+        <a href="https://github.com/msantos7gabriel">Gabriel Montalvão</a>
+        <a href="https://github.com/bruno-rodrigues0">Bruno Rodrigues</a>
+        <a href="https://github.com/riancesaros">Rian Cesar</a>
+      </div>
+     </footer>
 
     <script>
       document.getElementById('logforminput').addEventListener('change', function(event) {
