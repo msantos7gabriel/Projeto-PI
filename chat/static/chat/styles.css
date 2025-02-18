@@ -134,33 +134,27 @@ header nav a {
 }
 
 .response h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-block: 10px;
 }
 
 .response p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 10px;
-}
-
-.response a {
-    color: #249ed6;
-    text-decoration: none;
-}
-
-.response a:hover {
-    text-decoration: underline;
 }
 
 .response {
     background-color: #333;
-    border: 1px solid #249ed6;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
+    max-width: 900px;
+    max-height: 650px;
     word-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
 footer {
     background: linear-gradient(to bottom left, #004d40 0%, #007663 100%);
     width: 100%;
@@ -205,4 +199,20 @@ h2 {
     &:hover {
         text-decoration: underline;
     }
+}
+
+
+section a {
+    border: 1px solid rgb(25, 152, 190);
+    outline: 1px solid rgb(30, 167, 209);
+    border-radius: 8px;
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: rgb(25, 152, 190);
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: auto;
+    margin-top: 30px;
 }
