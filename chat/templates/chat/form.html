@@ -15,6 +15,7 @@
     <!-- Cabeçalho-->
     <header>
       <div class="logo">
+        <img src="../../static/chat/logo.png" alt="Logo">
         <h1>LogAnalizer</h1>
       </div>
       <!-- Barra de navegação -->
@@ -23,15 +24,18 @@
         <a href="https://github.com/msantos7gabriel/Projeto-PI">Documentação</a>
       </nav>
     </header>
-    <!-- Formulario de envio do arquivo-->
-    <div class="box">
-      <form action="{% url 'index' %}" method="post" enctype="multipart/form-data" id="logform" name="logform">
-        {% csrf_token %}
-        <input type="file" id="logforminput" name="arquivo" />
-        <label for="logforminput" class="labellogform"><i class="fa-solid fa-upload"></i> Upload</label>
-        <div class="files"></div>
-        <input type="submit" value="Analizar" id="submit"/>
-      </form>
+
+    <div class="container">
+      <!-- Formulario de envio do arquivo-->
+          <form action="{% url 'index' %}" method="post" enctype="multipart/form-data" id="logform" name="logform">
+            {% csrf_token %}
+            <div class="box">
+              <input type="file" id="logforminput" name="arquivo" />
+              <label for="logforminput" class="labellogform"><i class="fa-solid fa-upload"></i> Carregar arquivo</label>
+              <div class="files"></div>
+            </div>
+            <input type="submit" value="Analizar" id="submit"/>
+          </form>
     </div>
 
     <!-- Rodapé -->
@@ -39,14 +43,14 @@
       <div class="git">
         <h2>Source code</h2>
         <div class="gitparagraf">
-          <p>Disponivel no </p><a href="https://github.com/msantos7gabriel/Projeto-PI">GitHub<i class="fa-brands fa-github"></i></a>
+          <p>Disponível no ‎</p><a href="https://github.com/msantos7gabriel/Projeto-PI">GitHub ‎<i class="fa-brands fa-github"></i></a>
         </div>
       </div>
       <div class="devs">
         <h2>Devs</h2>
         <a href="https://github.com/msantos7gabriel">Gabriel Montalvão</a>
         <a href="https://github.com/bruno-rodrigues0">Bruno Rodrigues</a>
-        <a href="https://github.com/riancesaros">Rian Cesar</a>
+        <a href="https://github.com/riancesaros">Rian Souza</a>
       </div>
      </footer>
 
