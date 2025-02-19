@@ -8,46 +8,32 @@ client = OpenAI(
     api_key="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",
 )
 
+
 def middle_out_transform(text: str, max_length: int = 1000) -> str:
-    """
-    Aplica a estratégia "middle-out" para comprimir um texto longo.
-    
-    Se o texto tiver tamanho menor ou igual a max_length, retorna-o inalterado.
-    Caso contrário, mantém uma parte do início e do fim do texto e insere 
-    uma mensagem indicando quantos caracteres foram omitidos.
-    
-    Parâmetros:
-      text (str): Texto original a ser comprimido.
-      max_length (int): Número máximo de caracteres que o resultado pode ter.
-    
-    Retorna:
-      str: Texto transformado usando a estratégia middle-out.
-    """
+
     if len(text) <= max_length:
         return text
 
     # Template da mensagem que indica quantos caracteres foram omitidos.
-    marker_template = " ... [omitted {} characters] ... "
-    
-    # Estimamos um comprimento fixo para o marcador usando um número grande (ex.: 10 dígitos)
+    marker_template = " ... [caracteres omitidos {} ] ... "
+
     estimated_marker = marker_template.format("XXXXXXXXXX")
     estimated_marker_len = len(estimated_marker)
-    
+
     # Calcula quantos caracteres manter do início e do fim
     K = (max_length - estimated_marker_len) // 2
     omitted = len(text) - 2 * K
     marker_final = marker_template.format(omitted)
-    
+
     result = text[:K] + marker_final + text[-K:]
-    
-    # Se o resultado ainda ultrapassar o tamanho máximo, ajusta diminuindo K
+
     if len(result) > max_length:
         extra = len(result) - max_length
         K -= extra // 2 + 1
         omitted = len(text) - 2 * K
         marker_final = marker_template.format(omitted)
         result = text[:K] + marker_final + text[-K:]
-    
+
     return result
 
 
@@ -55,10 +41,9 @@ def call(nome):
     caminho_arquivo = os.path.join(settings.MEDIA_ROOT, nome)
     with open(caminho_arquivo, 'r', encoding='utf-8') as f:
         conteudo = f.read()
-        
+
         conteudo = middle_out_transform(conteudo, 110000)
 
-    # Em vez de concatenar tudo em uma única string, separe em duas mensagens:
     mensagens = [
         {
             "role": "user",
@@ -83,15 +68,11 @@ def call(nome):
         model="deepseek/deepseek-chat:free",
         messages=mensagens,
     )
-     
+
     os.remove(caminho_arquivo)
-    
+
     if hasattr(completion, 'error'):
         return completion.error
     else:
         html = markdown.markdown(completion.choices[0].message.content)
         return html
-        
-    
-   
-    
