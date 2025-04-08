@@ -4,74 +4,202 @@
     box-sizing: border-box;
     line-height: 1.5;
 }
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #2c2c2c;
+    background-color: #1a1a1a; /* Fundo mais escuro, como na imagem */
     color: #fff;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 header {
     border-top: 9px solid #545454;
     background: linear-gradient(to top right, #00523b 0%, #11b688 100%);
-    height: 100px;
+    height: 80px; /* Ajustado para ser mais compacto */
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
 .logo {
-    margin-left: 10%;
+    margin-left: 5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+
 .logo img {
-    height: 70px;
+    height: 50px; /* Ajustado para o tamanho da imagem na tela */
     border-radius: 5px;
 }
+
 .logo h1 {
-    font-size: 45px;
-    margin-left: 20px;
+    font-size: 2rem; /* Tamanho ajustado para ser mais próximo da imagem */
+    margin-left: 15px;
 }
+
 header nav {
-    margin-right: 10%;
-    width: 300px;
+    margin-right: 5%;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre os links */
 }
+
 header nav a {
     color: #fff;
     text-decoration: none;
-    font-size: 23px;
-    
-    &:hover {
-        text-decoration: underline;
-    }
+    font-size: 1.2rem;
 }
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
 .container {
     width: 100%;
-    height: 1vh;
+    flex: 1; /* Faz o container ocupar o espaço disponível */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0;
 }
-.box {
-    margin-top: 500px;
 
-    width: 460px;
-    padding: 22px;
-    border-radius: 32px;
-    height: auto;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background: rgba(182, 182, 182, 0.20);
+.box {
+    margin-top: 0; /* Removido o margin-top fixo para centralizar corretamente */
+    width: 90%;
+    max-width: 900px; /* Ajustado para o tamanho da caixa na imagem */
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(182, 182, 182, 0.2);
     border: 1px solid rgba(186, 186, 186, 0.14);
     box-shadow: 0 6px 50px rgba(0, 0, 0, 0.25);
 }
+
+.files {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    display: block; /* Ajustado para block para melhor controle */
+    padding: 1.5rem;
+    background-color: #333; /* Fundo cinza escuro como na imagem */
+}
+
+.response {
+    width: 100%; /* Ajustado para ocupar o espaço do .box */
+    margin: 0;
+    background-color: transparent; /* O fundo já é definido no .files */
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    max-height: 60vh; /* Ajustado para ser mais próximo da imagem */
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+.response h2 {
+    font-size: 1.8rem; /* Tamanho ajustado para o título */
+    margin-block: 1rem;
+    color: #fff;
+}
+
+.response h3 {
+    font-size: 1.4rem;
+    margin-block: 0.8rem;
+    color: #ddd;
+}
+
+.response p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #ccc; /* Texto um pouco mais claro para contraste */
+}
+
+#submit {
+    border: 1px solid rgba(25, 152, 190, 0.6);
+    outline: 1px solid rgba(30, 167, 209, 0.6);
+    border-radius: 1rem;
+    display: block;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    background-color: rgba(51, 121, 148, 0.7);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2rem auto;
+    transition: all 0.3s ease;
+}
+
+#submit:hover {
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+    background-color: rgb(51, 121, 148);
+}
+
+footer {
+    background: linear-gradient(to bottom left, #004d40 0%, #007663 100%);
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.git {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gitparagraf {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+.gitparagraf a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 0.3rem;
+}
+
+.gitparagraf a:hover {
+    text-decoration: underline;
+}
+
+.devs {
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.devs a {
+    font-size: 1.1rem;
+    padding: 2px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.devs a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos não utilizados no index.html, mas mantidos para consistência */
 #logforminput {
     display: none;
 }
+
 .labellogform {
     border: 1px solid rgba(25, 152, 190, 0.5);
     outline: 1px solid rgba(30, 167, 209, 0.45);
@@ -85,134 +213,77 @@ header nav a {
     text-align: center;
     font-size: 32px;
     font-weight: bolder;
-
 }
 
 .labellogform:hover {
     background-color: rgba(51, 121, 148, 0.9);
 }
 
-.files {
-    height: auto;
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 10px;
-    background-color: #ffffff38;
-}
+/* Removido o section a, pois já é coberto pelo #submit */
 
-#submit {
-    border: 1px solid rgba(25, 152, 190, 0.6);
-    outline: 1px solid rgba(30, 167, 209, 0.6);
-    border-radius: 1rem;
-    display: block;
-    padding: 10px 38px;
-    cursor: pointer;
-    background-color: rgba(51, 121, 148, 0.7);
-    color: white;
-    font-size: 26px;
-    font-weight: bolder;
-    margin: auto;
-    margin-top: 30px;
-    transition: transform 0.5s;
-}
-#submit:hover {
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
-    transform: scale(1.1);
-    background-color: rgb(51, 121, 148);
-}
-
-.response {
-    width: 80%;
-    margin: auto;
-}
-
-.response h2 {
-    font-size: 3rem;
-    margin-block: 20px;
-}
-
-.response h3 {
-    font-size: 2rem;
-    margin-block: 10px;
-}
-
-.response p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.response {
-    background-color: #333;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-width: 900px;
-    max-height: 650px;
-    word-wrap: break-word;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-footer {
-    background: linear-gradient(to bottom left, #004d40 0%, #007663 100%);
-    width: 100%;
-    height: 165px;
-    margin-top: 638px;
-    display: flex;
-    justify-content: space-between;
-}
-.git {
-    margin-left: 15%;
-    display: flex;
-    flex-direction: column;
-}
-.gitparagraf {
-    display: flex;
-    flex-direction: row;
-    font-size: 24px;
-}
-.gitparagraf a {
-    color: #fff;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
     }
-}
-.devs {
-    margin-right: 15%;
-    display: flex;
-    flex-direction: column;
-}
-h2 {
-    margin-top: 8px;
-    margin-bottom: 10px;
-}
-.devs a {
-    font-size: 20px;
-    padding: 1px;
-    color: #fff;
-    text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
+    .logo {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
     }
-}
 
+    .logo h1 {
+        font-size: 1.8rem;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
 
-section a {
-    border: 1px solid rgb(25, 152, 190);
-    outline: 1px solid rgb(30, 167, 209);
-    border-radius: 8px;
-    display: block;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: rgb(25, 152, 190);
-    color: white;
-    font-size: 1rem;
-    font-weight: bolder;
-    margin: auto;
-    margin-top: 30px;
+    header nav {
+        margin-right: 0;
+        margin-top: 1rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    header nav a {
+        font-size: 1rem;
+    }
+
+    .box {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .response h2 {
+        font-size: 1.5rem;
+    }
+
+    .response h3 {
+        font-size: 1.2rem;
+    }
+
+    .response p {
+        font-size: 0.9rem;
+    }
+
+    #submit {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .git,
+    .devs {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
 }
