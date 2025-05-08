@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LogAnaliser</title>
     <link rel="stylesheet" href="{% static 'chat/styles.css' %}" />
-    <link rel="icon" type="image/png" sizes="16x16"  href={% static 'chat/favicon-16x16.png' %}>
+    <link rel="icon" type="image/png" sizes="16x16"  href='{% static "chat/favicon-16x16.png" %}'>
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
   </head>
@@ -26,13 +26,13 @@
   </header>
   <div class="container">
     <section>
-      <div class="box">
+      <div class="box" id="box_response">
         <div class="response files">
           {{ ai_response|safe }}
         </div>
       </div>
-      <a id="submit" href="{% url 'index' %}">Reenviar outro log</a>
     </section>
+    <a id="submit" href="{% url 'index' %}">Reenviar outro log</a>
   </div>  
 
   <!-- Rodapé -->
