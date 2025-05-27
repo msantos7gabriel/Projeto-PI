@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlyIA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Diagnóstico de Voo de Drone</h1>
+
+    <form id="logForm">
+      <label for="logFile"><i class="fa-solid fa-file-lines"></i> Envie o arquivo de log (.txt):</label>
+      <input type="file" id="logFile" accept=".txt" required />
+      <button type="submit"><i class="fa-solid fa-upload"></i> Analisar Log</button>
+    </form>
+
+    <section>
+      <h2><i class="fa-solid fa-copy"></i> Conteúdo do Log</h2>
+      <pre id="logContent">(nenhum arquivo carregado)</pre>
+    </section>
+
+    <section>
+      <h2><i class="fa-solid fa-square-poll-vertical"></i> Diagnóstico da IA</h2>
+      <pre id="diagnostico">(diagnóstico aparecerá aqui)</pre>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
