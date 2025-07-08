@@ -95,6 +95,9 @@ h2 {
   transition: all 0.3s ease;
   border: 1px solid rgba(29, 185, 84, 0.3);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h2:hover {
@@ -367,6 +370,43 @@ section:last-child {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(29, 185, 84, 0.8);
+}
+
+/* Botão de dropdown para log */
+.toggle-btn {
+  background: rgba(29, 185, 84, 0.2);
+  border: 1px solid rgba(29, 185, 84, 0.4);
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+}
+
+.toggle-btn:hover {
+  background: rgba(29, 185, 84, 0.3);
+  border-color: rgba(29, 185, 84, 0.6);
+  transform: scale(1.05);
+}
+
+.toggle-btn.expanded {
+  background: rgba(29, 185, 84, 0.4);
+  border-color: rgba(29, 185, 84, 0.6);
+}
+
+/* Estado colapsado do log */
+#logContent.collapsed {
+  max-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Responsividade */

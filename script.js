@@ -42,7 +42,21 @@ document.getElementById('logForm').addEventListener('submit', async (e) => {
 
   reader.onload = async function (event) {
     const logData = event.target.result;
-    logContentEl.textContent = logData;
+    fullLogContent = logData;
+    
+    // Mostrar apenas primeira linha inicialmente
+    const firstLine = logData.split('\n')[0] || logData;
+    logContentEl.textContent = firstLine;
+    logContentEl.classList.add('collapsed');
+    
+    // Mostrar botão de dropdown apenas se há múltiplas linhas
+    const toggleBtn = document.getElementById('toggleLogBtn');
+    if (logData.split('\n').length > 1) {
+      toggleBtn.style.display = 'inline-flex';
+    }
+    toggleBtn.classList.remove('expanded');
+    toggleBtn.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+    isExpanded = false;
 
     diagnosticoEl.textContent = '🔄 Analisando com IA...';
 
@@ -79,4 +93,37 @@ document.getElementById('logForm').addEventListener('submit', async (e) => {
   };
 
   reader.readAsText(file);
+});
+
+// Variáveis globais para controle do dropdown
+let fullLogContent = '';
+let isExpanded = false;
+
+// Função para toggle do dropdown
+function toggleLogContent() {
+  const logContent = document.getElementById('logContent');
+  const toggleBtn = document.getElementById('toggleLogBtn');
+  
+  if (isExpanded) {
+    // Colapsar: mostrar apenas primeira linha
+    const firstLine = fullLogContent.split('\n')[0];
+    logContent.textContent = firstLine;
+    logContent.classList.add('collapsed');
+    toggleBtn.classList.remove('expanded');
+    toggleBtn.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+    isExpanded = false;
+  } else {
+    // Expandir: mostrar conteúdo completo
+    logContent.textContent = fullLogContent;
+    logContent.classList.remove('collapsed');
+    toggleBtn.classList.add('expanded');
+    toggleBtn.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
+    isExpanded = true;
+  }
+}
+
+// Adicionar event listener ao botão quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('toggleLogBtn');
+  toggleBtn.addEventListener('click', toggleLogContent);
 });
