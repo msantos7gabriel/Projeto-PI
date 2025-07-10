@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FlyIA</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./src/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -22,21 +22,16 @@
     </form>
 
     <section>
-      <h2>
-        <i class="fa-solid fa-copy"></i> Conteúdo do Log
-        <button type="button" id="toggleLogBtn" class="toggle-btn" style="display: none;">
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-      </h2>
-      <pre id="logContent" class="collapsed">(nenhum arquivo carregado)</pre>
+      <h2><i class="fa-solid fa-copy"></i> Conteúdo do Log</h2>
+      <pre id="logContent">(nenhum arquivo carregado)</pre>
     </section>
 
     <section>
       <h2><i class="fa-solid fa-square-poll-vertical"></i> Diagnóstico da IA</h2>
-      <div id="diagnostico" class="markdown-content">(diagnóstico aparecerá aqui)</div>
+      <div id="diagnostico" class="markdown-content"></div>
     </section>
   </div>
 
-  <script src="script.js"></script>
+  <script src="./src/js/script.js"></script>
 </body>
 </html>
