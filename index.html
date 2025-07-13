@@ -3,33 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlyIA</title>
+  <title>DroneBot - Chat sobre Drones</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./src/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>Diagnóstico de Voo de Drone</h1>
+    <header class="chat-header">
+      <h1><i class="fa-solid fa-helicopter"></i> DroneBot</h1>
+      <p>Seu assistente especializado em drones e tecnologia aérea</p>
+    </header>
 
-    <form id="logForm">
-      <label for="logFile"><i class="fa-solid fa-file-lines"></i> Envie o arquivo de log (.txt):</label>
-      <input type="file" id="logFile" accept=".txt" required />
-      <label for="logFile"><i class="fa-solid fa-key"></i> Coloque a chave da api: </label>
-      <input type="text" id="apiKey" required />
+    <div class="api-key-section" id="apiKeySection">
+      <div class="api-input-container">
+        <label for="apiKey"><i class="fa-solid fa-key"></i> Chave da API OpenRouter:</label>
+        <div class="input-group">
+          <input type="text" id="apiKey" placeholder="Digite sua chave da API..." required />
+          <button type="button" id="saveApiKey"><i class="fa-solid fa-check"></i></button>
+        </div>
+      </div>
+    </div>
 
-      <button type="submit"><i class="fa-solid fa-upload"></i> Analisar Log</button>
-    </form>
-
-    <section>
-      <h2><i class="fa-solid fa-copy"></i> Conteúdo do Log</h2>
-      <pre id="logContent">(nenhum arquivo carregado)</pre>
-    </section>
-
-    <section>
-      <h2><i class="fa-solid fa-square-poll-vertical"></i> Diagnóstico da IA</h2>
-      <div id="diagnostico" class="markdown-content"></div>
-    </section>
+    <div class="chat-container" id="chatContainer" style="display: none;">
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <i class="fa-solid fa-helicopter"></i>
+          </div>
+          <div class="message-content">
+            <div class="markdown-content">
+              <p>Olá! Eu sou o DroneBot, seu assistente especializado em drones e tecnologia aérea. 🚁</p>
+              <p>Posso ajudar você com:</p>
+              <ul>
+                <li>Informações sobre modelos de drones</li>
+                <li>Dicas de pilotagem e segurança</li>
+                <li>Regulamentações e legislação</li>
+                <li>Manutenção e reparo</li>
+                <li>Tecnologias e inovações</li>
+              </ul>
+              <p>Como posso ajudar você hoje?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="chat-input-container">
+        <form id="chatForm">
+          <div class="input-group">
+            <textarea id="messageInput" placeholder="Digite sua pergunta sobre drones..." rows="1"></textarea>
+            <button type="submit" id="sendButton"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script src="./src/js/script.js"></script>
