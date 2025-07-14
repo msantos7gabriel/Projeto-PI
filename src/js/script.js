@@ -10,6 +10,8 @@ const chatForm = document.getElementById('chatForm');
 const messageInput = document.getElementById('messageInput');
 const sendButton = document.getElementById('sendButton');
 const chatMessages = document.getElementById('chatMessages');
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
 
 // Prompt do sistema para o chatbot de drones
 const systemPrompt = `
@@ -46,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enviar mensagem
     chatForm.addEventListener('submit', sendMessage);
     
+    // Sidebar toggle functionality
+    setupSidebarToggle();
+    
     // Enter para enviar (Shift+Enter para nova linha)
     messageInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
@@ -54,6 +59,54 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function setupSidebarToggle() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Mobile: sidebar starts hidden
+        sidebar.classList.add('hidden');
+        
+        // Create overlay for mobile
+        const overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        document.body.appendChild(overlay);
+        
+        sidebarToggle.addEventListener('click', function() {
+            const isHidden = sidebar.classList.contains('hidden');
+            
+            if (isHidden) {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('visible');
+                overlay.classList.add('active');
+            } else {
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('visible');
+                overlay.classList.remove('active');
+            }
+        });
+        
+        // Close sidebar when clicking overlay
+        overlay.addEventListener('click', function() {
+            sidebar.classList.add('hidden');
+            sidebar.classList.remove('visible');
+            overlay.classList.remove('active');
+        });
+    } else {
+        // Desktop: toggle width
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('hidden');
+        });
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const newIsMobile = window.innerWidth <= 768;
+        if (newIsMobile !== isMobile) {
+            location.reload(); // Reload to reset mobile/desktop behavior
+        }
+    });
+}
 
 function autoResize() {
     messageInput.style.height = 'auto';
