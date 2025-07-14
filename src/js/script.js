@@ -271,6 +271,28 @@ async function sendToAPI(message) {
     sendButton.disabled = true;
     
     try {
+        // Carregar dados dos arquivos JSON
+        const docsData = await loadDocsData();
+        const articleData = await loadArticleData();
+        
+        // Criar contexto enriquecido com os dados dos arquivos
+        let enhancedMessage = message;
+        
+        if (docsData || articleData) {
+            enhancedMessage = `
+            DADOS DE CONTEXTO DISPONÍVEIS:
+            ${docsData ? `
+            DADOS DE DOCUMENTAÇÕES OFICIAIS:
+            ${JSON.stringify(docsData, null, 2)}
+            ` : ''}
+            ${articleData ? `
+            ARTIGOS TÉCNICOS:
+            ${JSON.stringify(articleData, null, 2)}
+            ` : ''}
+
+            Por favor, use essas informações detalhadas para complementar sua resposta quando relevante, não necessáriamente use apenas elas.`;
+        }
+            
         const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
             method: 'POST',
             headers: {
@@ -286,7 +308,7 @@ async function sendToAPI(message) {
                     },
                     {
                         role: 'user',
-                        content: message
+                        content: enhancedMessage
                     }
                 ]
             })
@@ -314,13 +336,13 @@ async function sendToAPI(message) {
     }
 }
 
-// Funções para carregar dados dos arquivos JSON (opcional para uso futuro)
+// Funções para carregar dados dos arquivos JSON (essenciais para enriquecer as respostas da IA)
 async function loadDocsData() {
     try {
         const response = await fetch('./src/data/docs.json');
         return await response.json();
     } catch (error) {
-        console.log('Dados de documentação não disponíveis:', error);
+        console.error('Erro ao carregar dados de documentação:', error);
         return null;
     }
 }
@@ -330,7 +352,7 @@ async function loadArticleData() {
         const response = await fetch('./src/data/article.json');
         return await response.json();
     } catch (error) {
-        console.log('Dados de artigos técnicos não disponíveis:', error);
+        console.error('Erro ao carregar dados de artigos técnicos:', error);
         return null;
     }
 }
