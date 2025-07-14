@@ -1,0 +1,411 @@
+{
+  "artigos_tecnicos": {
+    "montagem_drones": {
+      "componentes_principais": {
+        "frame": {
+          "descricao": "Estrutura principal do drone, normalmente em fibra de carbono ou plástico",
+          "tipos": ["X-frame", "H-frame", "Plus-frame"],
+          "consideracoes": [
+            "Material deve ser leve e resistente",
+            "Tamanho deve acomodar motores e eletrônicos",
+            "Design influencia aerodinâmica e estabilidade"
+          ]
+        },
+        "motores": {
+          "descricao": "Motores brushless para quadricópteros e multirrotores",
+          "especificacoes": [
+            "KV rating (RPM por volt)",
+            "Torque e eficiência",
+            "Compatibilidade com hélices"
+          ],
+          "dicas_instalacao": [
+            "Verificar direção de rotação",
+            "Fixação segura no frame",
+            "Balanceamento dos motores"
+          ]
+        },
+        "esc": {
+          "nome": "Electronic Speed Controller",
+          "funcao": "Controla velocidade dos motores brushless",
+          "caracteristicas": [
+            "Amperagem adequada para os motores",
+            "Protocolo de comunicação (PWM, OneShot, DShot)",
+            "Recursos como BLHeli_S ou BLHeli_32"
+          ]
+        },
+        "flight_controller": {
+          "descricao": "Cérebro do drone, responsável por estabilização e controle",
+          "componentes": [
+            "Giroscópio e acelerômetro",
+            "Processador para cálculos de voo",
+            "Firmware (Betaflight, iNav, ArduPilot)"
+          ],
+          "configuracao": [
+            "Calibração de sensores",
+            "Configuração de PID",
+            "Setup de modos de voo"
+          ]
+        },
+        "bateria": {
+          "tipo": "LiPo (Lithium Polymer)",
+          "especificacoes": [
+            "Voltagem (1S, 2S, 3S, 4S, 6S)",
+            "Capacidade (mAh)",
+            "Taxa de descarga (C rating)"
+          ],
+          "cuidados": [
+            "Nunca descarregar completamente",
+            "Armazenar com carga de 50-60%",
+            "Monitorar temperatura durante uso",
+            "Usar carregador balanceado"
+          ]
+        },
+        "helices": {
+          "descricao": "Geram sustentação através da rotação",
+          "especificacoes": [
+            "Diâmetro e passo",
+            "Material (plástico, fibra de carbono)",
+            "Número de pás (2, 3, 4)"
+          ],
+          "balanceamento": [
+            "Verificar peso de cada hélice",
+            "Balancear para reduzir vibrações",
+            "Substituir em pares"
+          ]
+        }
+      },
+      "ferramentas_necessarias": [
+        "Chaves Allen (hexagonais)",
+        "Chaves de fenda pequenas",
+        "Ferro de solda e solda",
+        "Multímetro",
+        "Balanceador de hélices",
+        "Fita dupla face",
+        "Abraçadeiras plásticas"
+      ],
+      "processo_montagem": {
+        "passo_1": "Montagem do frame e instalação dos motores",
+        "passo_2": "Soldagem dos ESCs aos motores",
+        "passo_3": "Instalação e conexão do flight controller",
+        "passo_4": "Conexão do sistema de energia (PDB ou ESC 4-in-1)",
+        "passo_5": "Instalação do receptor de rádio",
+        "passo_6": "Teste de motores e calibração",
+        "passo_7": "Configuração do firmware",
+        "passo_8": "Testes de voo em ambiente seguro"
+      }
+    },
+    "manutencao_drones": {
+      "manutencao_preventiva": {
+        "inspecao_visual": [
+          "Verificar integridade do frame",
+          "Examinar hélices por rachaduras ou danos",
+          "Verificar conexões soltas",
+          "Inspecionar fiação por desgaste"
+        ],
+        "limpeza": [
+          "Remover sujeira e detritos",
+          "Limpar motores com ar comprimido",
+          "Verificar gimbal da câmera",
+          "Limpar sensores e antenas"
+        ],
+        "verificacao_eletronica": [
+          "Testar voltagem da bateria",
+          "Verificar funcionamento dos motores",
+          "Testar alcance do controle remoto",
+          "Atualizar firmware quando necessário"
+        ]
+      },
+      "solucao_problemas": {
+        "problemas_motores": {
+          "sintomas": ["Vibração excessiva", "Motor não gira", "Ruído anormal"],
+          "causas": ["Hélice desbalanceada", "Rolamento danificado", "ESC defeituoso"],
+          "solucoes": ["Balancear ou trocar hélices", "Substituir motor", "Verificar/trocar ESC"]
+        },
+        "problemas_bateria": {
+          "sintomas": ["Tempo de voo reduzido", "Voltagem instável", "Aquecimento excessivo"],
+          "causas": ["Células desbalanceadas", "Idade da bateria", "Sobrecarga"],
+          "solucoes": ["Balancear células", "Substituir bateria", "Verificar configuração ESC"]
+        },
+        "problemas_controle": {
+          "sintomas": ["Perda de sinal", "Controle não responsivo", "Drift do drone"],
+          "causas": ["Interferência", "Bateria baixa no controle", "Calibração incorreta"],
+          "solucoes": ["Trocar canal", "Carregar controle", "Recalibrar sensores"]
+        }
+      },
+      "periodicidade_manutencao": {
+        "antes_de_cada_voo": [
+          "Verificar nível da bateria",
+          "Inspecionar hélices",
+          "Testar controles",
+          "Verificar cartão SD"
+        ],
+        "semanal": [
+          "Limpeza geral",
+          "Verificar parafusos",
+          "Testar alcance do sinal",
+          "Backup de configurações"
+        ],
+        "mensal": [
+          "Balanceamento de hélices",
+          "Verificação de desgaste dos motores",
+          "Atualização de firmware",
+          "Calibração completa dos sensores"
+        ]
+      }
+    },
+    "seguranca_operacional": {
+      "pre_voo": [
+        "Verificar condições meteorológicas",
+        "Inspecionar área de voo",
+        "Confirmar NOTAMs e restrições",
+        "Verificar equipamentos de emergência"
+      ],
+      "durante_voo": [
+        "Manter contato visual",
+        "Monitorar nível de bateria",
+        "Respeitar altura máxima",
+        "Evitar áreas populadas"
+      ],
+      "pos_voo": [
+        "Desligar equipamentos em ordem",
+        "Verificar logs de voo",
+        "Armazenar bateria adequadamente",
+        "Reportar incidentes se necessário"
+      ]
+    }
+  },
+  "recursos_educacionais": {
+    "plataformas_aprendizado": [
+      "Arduino Education - Projetos com drones",
+      "SparkFun Learn - Tutoriais de eletrônica",
+      "Oscar Liang - Guias FPV e construção",
+      "Random Nerd Tutorials - Programação e sensores"
+    ],
+    "simuladores": [
+      "DRL Simulator",
+      "FPV Freerider",
+      "Liftoff",
+      "Velocidrone"
+    ],
+    "comunidades": [
+      "Arduino Forum",
+      "Reddit r/Multicopter",
+      "RCGroups",
+      "Fóruns especializados em FPV"
+    ]
+  },
+  "configuracao_avancada": {
+    "modos_de_voo": {
+      "categorias": {
+        "basicos": {
+          "stabilize": {
+            "descricao": "Auto-estabilização nos eixos roll e pitch",
+            "controle": "Manual",
+            "uso": "Iniciantes, voo básico"
+          },
+          "alt_hold": {
+            "descricao": "Mantém altitude e auto-estabiliza",
+            "controle": "Semi-automático",
+            "uso": "Voo com altitude constante"
+          },
+          "loiter": {
+            "descricao": "Mantém posição e altitude usando GPS",
+            "controle": "Semi-automático",
+            "requisitos": "GPS válido"
+          }
+        },
+        "autonomos": {
+          "rtl": {
+            "nome": "Return to Launch",
+            "descricao": "Retorna automaticamente ao ponto de decolagem",
+            "comportamento": "Sobe para altitude segura, voa direto para home, pousa",
+            "requisitos": "GPS válido, home position definida",
+            "uso": "Emergência, bateria baixa, perda de sinal"
+          },
+          "smart_rtl": {
+            "descricao": "RTL inteligente que retorna pelo caminho percorrido",
+            "vantagem": "Evita obstáculos conhecidos do caminho de ida"
+          },
+          "auto": {
+            "descricao": "Executa missão pré-programada",
+            "requisitos": "GPS, missão carregada"
+          },
+          "guided": {
+            "descricao": "Navega para pontos comandados pela estação de solo",
+            "uso": "Controle via GCS"
+          }
+        },
+        "especiais": {
+          "land": {
+            "descricao": "Pouso automático no local atual",
+            "comportamento": "Descida controlada até o solo"
+          },
+          "brake": {
+            "descricao": "Parada imediata do movimento",
+            "uso": "Emergência"
+          },
+          "throw": {
+            "descricao": "Modo para lançamento manual",
+            "uso": "Takeoff por arremesso"
+          }
+        }
+      }
+    },
+    "failsafes": {
+      "tipos": {
+        "radio_failsafe": {
+          "trigger": "Perda do sinal do controle remoto",
+          "acoes": ["RTL", "Land", "Continue Mission"],
+          "configuracao": "Timeout configurável (normalmente 1-3 segundos)"
+        },
+        "battery_failsafe": {
+          "niveis": {
+            "warning": "Aviso quando bateria atinge nível definido",
+            "failsafe": "Ação automática (geralmente RTL)",
+            "emergency": "Pouso imediato"
+          },
+          "parametros": "Porcentagens configuráveis (ex: 25%, 15%, 10%)"
+        },
+        "gps_failsafe": {
+          "trigger": "Perda do sinal GPS",
+          "acoes": ["Switch para ATTI mode", "Land", "Continue inercial"],
+          "consideracoes": "Modo de voo atual influencia comportamento"
+        },
+        "vibration_failsafe": {
+          "trigger": "Vibrações excessivas detectadas",
+          "acao": "Mudança para algoritmo mais resistente a vibrações",
+          "limite": "Normalmente >60m/s/s por mais de 1 segundo"
+        }
+      }
+    },
+    "configuracao_pid": {
+      "conceitos": {
+        "p_gain": {
+          "nome": "Proporcional",
+          "funcao": "Resposta direta ao erro atual",
+          "efeito_alto": "Resposta rápida, possível oscilação",
+          "efeito_baixo": "Resposta lenta, menos precisa"
+        },
+        "i_gain": {
+          "nome": "Integral",
+          "funcao": "Corrige erros acumulados ao longo do tempo",
+          "efeito_alto": "Elimina drift, pode causar overshoot",
+          "efeito_baixo": "Drift permanente em wind"
+        },
+        "d_gain": {
+          "nome": "Derivativo",
+          "funcao": "Antecipa mudanças futuras baseado na taxa de variação",
+          "efeito_alto": "Amortecimento, sensibilidade a ruído",
+          "efeito_baixo": "Possível overshoot"
+        }
+      },
+      "processo_tuning": {
+        "sequencia": [
+          "1. Configurar P gain básico",
+          "2. Adicionar D gain para damping",
+          "3. Ajustar I gain para eliminar steady-state error",
+          "4. Refinar todos os valores iterativamente"
+        ],
+        "ferramentas": [
+          "AutoTune automático",
+          "Análise de logs",
+          "Observação visual",
+          "QuikTune para ajustes rápidos"
+        ]
+      }
+    },
+    "analise_vibracoes": {
+      "eixos": {
+        "x_y_axis": {
+          "causas_comuns": [
+            "Desbalanceamento de hélices",
+            "Problemas em rolamentos de motores",
+            "Montagem inadequada do flight controller",
+            "Interferência de cabos"
+          ],
+          "limite_aceitavel": "<30m/s/s",
+          "limite_problematico": ">60m/s/s"
+        },
+        "z_axis": {
+          "causas_comuns": [
+            "Hélices danificadas ou tortas",
+            "Folga vertical em motores",
+            "Problemas aerodinâmicos"
+          ],
+          "caracteristicas": "Vibrações verticais específicas"
+        }
+      },
+      "diagnostico": {
+        "clipping": {
+          "definicao": "Saturação dos acelerômetros (>16G)",
+          "ideal": "Zero clipping durante voo",
+          "aceitavel": "<100 eventos por voo"
+        },
+        "metodos_analise": [
+          "VIBE message nos logs",
+          "FFT analysis para frequências específicas",
+          "Real-time monitoring via GCS",
+          "Comparação entre múltiplos IMUs"
+        ]
+      }
+    },
+    "telemetria": {
+      "protocolos": {
+        "mavlink": {
+          "versao": "MAVLink 1 e 2",
+          "caracteristicas": "Protocolo padrão para comunicação drone-GCS",
+          "dados": "Posição, atitude, status, comandos"
+        },
+        "frsky": {
+          "uso": "Transmissores FrSky",
+          "dados_basicos": "Bateria, RSSI, GPS básico"
+        },
+        "crsf": {
+          "uso": "TBS Crossfire, ELRS",
+          "vantagens": "Baixa latência, longo alcance"
+        }
+      },
+      "tipos_radio": {
+        "curto_alcance": {
+          "sik_radio": "915MHz/433MHz, até 10km",
+          "wifi": "2.4GHz/5GHz, até 1km, alta taxa de dados",
+          "bluetooth": "Muito curto alcance, configuração"
+        },
+        "longo_alcance": {
+          "rfd900": "900MHz, até 40km linha de visada",
+          "microhard": "Frequências licenciadas, longo alcance",
+          "lte_4g": "Cobertura cellular, latência variável"
+        }
+      },
+      "configuracao": {
+        "parametros_importantes": [
+          "Baud rate (padrão 57600)",
+          "Air data rate vs ground rate",
+          "Potência de transmissão",
+          "Frequency hopping"
+        ],
+        "otimizacao": [
+          "Posicionamento de antenas",
+          "Configuração de retry packets",
+          "Compression settings",
+          "Priority de mensagens"
+        ]
+      }
+    }
+  },
+  "observacoes_importantes": {
+    "nota_1": "Este arquivo contém informações técnicas gerais sobre montagem e manutenção de drones coletadas de várias fontes",
+    "nota_2": "Sempre consulte a documentação oficial da ANAC para regulamentações específicas do Brasil",
+    "nota_3": "A montagem de drones requer conhecimento técnico e deve ser feita com cuidado",
+    "nota_4": "Recomenda-se buscar treinamento adequado antes de operar drones comercialmente",
+    "fontes_tentadas": [
+      "https://www.dronezon.com/ (página não encontrada)",
+      "https://www.instructables.com/ (página não encontrada)",
+      "https://oscarliang.com/ (página não encontrada)",
+      "https://www.arduino.cc/education/ (portal educacional acessível)",
+      "Várias outras fontes técnicas"
+    ]
+  },
+  "data_compilacao": "2024-07-14",
+  "status": "Compilação completa com informações avançadas sobre modos de voo, failsafes, configuração PID, análise de vibrações e telemetria baseada em documentação oficial ArduPilot e PX4"
+}

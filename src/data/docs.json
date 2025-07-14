@@ -1,0 +1,123 @@
+{
+  "documentacoes_oficiais": {
+    "orgao_regulador": "ANAC - Agência Nacional de Aviação Civil",
+    "portal_oficial": "https://www.gov.br/anac/pt-br/assuntos/drones",
+    "classificacao_drones": {
+      "titulo": "Classes de Drones (RPA) - Aeronaves Remotamente Pilotadas",
+      "fonte": "https://www.gov.br/anac/pt-br/assuntos/drones/classes-de-drones",
+      "classes": {
+        "classe_1": {
+          "peso": "Peso máximo de decolagem maior que 150 kg",
+          "descricao": "Drones de grande porte para aplicações profissionais específicas",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/aeronaves-nao-tripuladas-da-classe-1-peso-maximo-de-decolagem-maior-que-150-kg"
+        },
+        "classe_2": {
+          "peso": "Peso máximo de decolagem maior que 25 kg e até 150 kg",
+          "descricao": "Drones de médio porte para aplicações comerciais e industriais",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/aeronaves-nao-tripuladas-da-classe-2-peso-maximo-de-decolagem-maior-que-25kg-e-ate-150-kg"
+        },
+        "classe_3": {
+          "peso": "Peso máximo de decolagem até 25 kg",
+          "subcategorias": {
+            "ate_250g": {
+              "peso": "Até 250g",
+              "categoria": "Aeromodelos ou RPA",
+              "descricao": "Drones de uso recreativo e iniciantes",
+              "link": "https://www.gov.br/anac/pt-br/assuntos/drones/aeromodelos-ou-rpa-com-peso-maximo-de-decolagem-de-ate-250g"
+            },
+            "maior_250g_ate_25kg": {
+              "peso": "Maior que 250g e até 25 kg",
+              "descricao": "Drones para uso profissional básico e avançado",
+              "link": "https://www.gov.br/anac/pt-br/assuntos/drones/aeronaves-nao-tripuladas-da-classe-3-com-peso-maximo-de-deco-lagem-maior-que-250g-e-ate-25-kg"
+            }
+          },
+          "aplicacao_especial": {
+            "agrotoxicos": "RPA destinada para aplicação de agrotóxicos e afins, adjuvantes, fertilizantes, inoculantes, corretivos e sementes sobre áreas desabitadas, independentemente do peso máximo de decolagem da RPA, desde que operando VLOS ou EVLOS e até 400 pés AGL"
+          }
+        }
+      },
+      "observacoes": [
+        "A classificação é aplicável apenas para as RPA e não para os aeromodelos",
+        "Deve ser considerado os pesos da bateria ou combustível do equipamento e de carga eventualmente transportada"
+      ]
+    },
+    "pilotos": {
+      "titulo": "Requisitos para Pilotos de Drones",
+      "fonte": "https://www.gov.br/anac/pt-br/assuntos/drones/pilotos",
+      "requisitos": {
+        "idade_minima": {
+          "descricao": "Idade mínima para pilotar aeronaves não tripuladas",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/idade-minima-para-pilotar-aeronaves-nao-tripuladas"
+        },
+        "licenca_habilitacao": {
+          "descricao": "Licença, Habilitação e Certificado Médico Aeronáutico",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/licenca-habilitacao-e-certificado-medico-aeronautico"
+        },
+        "registro_voos": {
+          "descricao": "Registro de voos obrigatório",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/registro-de-voos"
+        },
+        "como_registrar": {
+          "descricao": "Como registrar os voos",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/como-registrar-os-voos"
+        },
+        "documentos_obrigatorios": {
+          "descricao": "Documentos de porte obrigatório durante as operações",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/documentos-de-porte-obrigatorio-durante-as-operacoes"
+        },
+        "meteorologia": {
+          "descricao": "Orientações sobre meteorologia aeronáutica para pilotos remotos",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/seguranca-operacional/meteorologia-aeronautica/assuntos-relacionados/drones-e-a-meteorologia"
+        }
+      }
+    },
+    "registros_certificados": {
+      "titulo": "Registros e Certificados de Drones",
+      "fonte": "https://www.gov.br/anac/pt-br/assuntos/drones/registros-e-certificados-de-drones",
+      "categorias": {
+        "classe_1": {
+          "descricao": "Drones - RPA de Classe 1 (peso máximo de decolagem superior a 150 kg)",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/drones-de-classe-1-peso-maximo-de-decolagem-superior-a-150-kg"
+        },
+        "classe_2": {
+          "descricao": "Drones - RPA de Classe 2 (peso máximo de decolagem superior a 25 kg e até 150 kg)",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/drones-de-classe-2-peso-maximo-de-decolagem-superior-a-25-kg-e-ate-150-kg"
+        },
+        "classe_3_bvlos": {
+          "descricao": "Drones - RPA de Classe 3 (peso máximo de decolagem até 25 kg) Operados além da linha visada visual (BVLOS) ou acima de 400 pés acima do nível do solo",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/drones-de-classe-3-peso-maximo-de-decolagem-ate-25-kg-operados-alem-da-linha-visada-visual-bvlos-ou-acima-de-400-pes-acima-do-nivel-do-solo"
+        },
+        "classe_3_vlos": {
+          "descricao": "Drones - RPA de Classe 3 (com peso máximo de decolagem acima de 250g até 25 kg) Operados da linha de visada visual (VLOS) e até 400 pés acima do nível do solo",
+          "link": "https://www.gov.br/anac/pt-br/assuntos/drones/drones-de-classe-3-com-peso-maximo-de-decolagem-acima-de-250g-ate-25-kg-nao-operados-alem-da-linha-de-visada-visual-bvlos-ou-acima-de-400-pes-acima-do-nivel-do-solo"
+        }
+      }
+    },
+    "sistemas_oficiais": {
+      "sisant": {
+        "nome": "SISANT - Sistema de Aeronaves Não Tripuladas",
+        "descricao": "Sistema oficial para registro e controle de drones",
+        "link": "https://www.gov.br/anac/pt-br/assuntos/drones/novo-sisant"
+      }
+    },
+    "recursos_adicionais": {
+      "aeromodelismo": {
+        "descricao": "Informações específicas sobre aeromodelismo",
+        "link": "https://www.gov.br/anac/pt-br/assuntos/drones/aeromodelismo"
+      },
+      "regras_vigentes": {
+        "descricao": "Regras vigentes de todos os órgãos do Brasil",
+        "link": "https://www.gov.br/anac/pt-br/assuntos/drones/regras-de-todos-os-orgaos-brasil"
+      }
+    },
+    "termos_tecnicos": {
+      "RPA": "Aeronave Remotamente Pilotada (Remotely Piloted Aircraft)",
+      "VLOS": "Visual Line of Sight - Linha de Visada Visual",
+      "EVLOS": "Extended Visual Line of Sight - Linha de Visada Visual Estendida",
+      "BVLOS": "Beyond Visual Line of Sight - Além da Linha de Visada Visual",
+      "AGL": "Above Ground Level - Acima do Nível do Solo"
+    }
+  },
+  "data_atualizacao": "2024-07-14",
+  "observacoes": "Dados coletados do portal oficial da ANAC (Agência Nacional de Aviação Civil) em julho de 2024. Recomenda-se verificar atualizações regulares no portal oficial."
+}
