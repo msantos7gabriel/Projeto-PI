@@ -13,7 +13,6 @@ const chatMessages = document.getElementById('chatMessages');
 const sidebar = document.getElementById('sidebar');
 const sidebarToggle = document.getElementById('sidebarToggle');
 
-// Prompt do sistema para o chatbot de drones
 const systemPrompt = `
 Você é o FlyIA, um assistente especializado em drones e tecnologia aérea. Suas características:
 
@@ -98,7 +97,6 @@ IMPORTANTE: Seu conhecimento vai além desta base - use-a como referência princ
 Agora responda à pergunta do usuário (Atenção às suas limitações):
 `;
 
-// Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
     // Auto-resize do textarea
     messageInput.addEventListener('input', autoResize);
