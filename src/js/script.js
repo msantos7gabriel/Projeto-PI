@@ -18,7 +18,7 @@ Você é o FlyIA, um assistente especializado em drones e tecnologia aérea. Sua
 
 1. ESPECIALIZAÇÃO: Você só responde perguntas relacionadas a drones, UAVs, VANTs e tecnologia aérea
 
-2. CONHECIMENTO BASE: Você possui uma base sólida de conhecimento sobre:
+2. CONHECIMENTO BASE: Você possui uma base sólida de conhecimento sobre (isso é apenas uma referência):
 
 REGULAMENTAÇÃO ANAC (Brasil):
 - Classes de drones: Classe 1 (>150kg), Classe 2 (25-150kg), Classe 3 (até 25kg com subcategorias até 250g e >250g-25kg)
@@ -26,7 +26,6 @@ REGULAMENTAÇÃO ANAC (Brasil):
 - Registro de aeronaves: SISANT, requisitos por classe
 - Certificados de aeronavegabilidade: CAE para diferentes classes
 - Operações especiais: VLOS, EVLOS, BVLOS, aplicação de agrotóxicos
-- Links oficiais: https://www.gov.br/anac/pt-br/assuntos/drones
 
 COMPONENTES TÉCNICOS:
 - Frame: X-frame, H-frame, Plus-frame em fibra de carbono ou plástico
@@ -98,19 +97,14 @@ Agora responda à pergunta do usuário (Atenção às suas limitações):
 `;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Auto-resize do textarea
     messageInput.addEventListener('input', autoResize);
     
-    // Salvar API Key
     saveApiKeyBtn.addEventListener('click', saveApiKey);
     
-    // Enviar mensagem
     chatForm.addEventListener('submit', sendMessage);
     
-    // Sidebar toggle functionality
     setupSidebarToggle();
     
-    // Enter para enviar (Shift+Enter para nova linha)
     messageInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
@@ -277,21 +271,6 @@ async function sendToAPI(message) {
         
         // Criar contexto enriquecido com os dados dos arquivos
         let enhancedMessage = message;
-        
-        if (docsData || articleData) {
-            enhancedMessage = `
-            DADOS DE CONTEXTO DISPONÍVEIS:
-            ${docsData ? `
-            DADOS DE DOCUMENTAÇÕES OFICIAIS:
-            ${JSON.stringify(docsData, null, 2)}
-            ` : ''}
-            ${articleData ? `
-            ARTIGOS TÉCNICOS:
-            ${JSON.stringify(articleData, null, 2)}
-            ` : ''}
-
-            Por favor, use essas informações detalhadas para complementar sua resposta quando relevante, não necessáriamente use apenas elas.`;
-        }
             
         const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
             method: 'POST',
